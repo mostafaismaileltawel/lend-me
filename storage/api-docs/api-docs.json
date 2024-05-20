@@ -1,0 +1,504 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laravel OpenApi Demo Documentation",
+        "description": "L5 Swagger OpenApi description",
+        "contact": {
+            "email": "admin@admin.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://my-default-host.com",
+            "description": "LendMe API Server"
+        }
+    ],
+    "paths": {
+        "/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "login",
+                "description": "login",
+                "operationId": "login",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "register",
+                "description": "register",
+                "operationId": "register",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "email/verify/{id}": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "verifyEmail",
+                "description": "verifyEmail",
+                "operationId": "verifyEmail",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "user  id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/logout": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "logout",
+                "description": "logout",
+                "operationId": "logout",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/user-profile": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": " show user profile",
+                "description": "show user profile",
+                "operationId": "user-profile",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/update": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "update user profilr",
+                "description": "update user profilr",
+                "operationId": "update",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/user": {
+            "get": {
+                "tags": [
+                    "Contact"
+                ],
+                "summary": "get all users",
+                "description": "get all users",
+                "operationId": "get_user",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/contact/{id}": {
+            "get": {
+                "tags": [
+                    "Contact"
+                ],
+                "summary": "Store contact",
+                "description": "Store contact",
+                "operationId": "Store contact",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "user  id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/contact_show": {
+            "get": {
+                "tags": [
+                    "Contact"
+                ],
+                "summary": "delete all conatacts",
+                "description": "get all contacts",
+                "operationId": "show_all_conatcts",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/delete_conatct/{id}": {
+            "delete": {
+                "tags": [
+                    "Contact"
+                ],
+                "summary": "delete single conatact",
+                "description": "delete single conatactt",
+                "operationId": "delete_single_conatact",
+                "parameters": [
+                    {
+                        "name": "contact id",
+                        "in": "path",
+                        "description": "contact  id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/delete_current_acount": {
+            "delete": {
+                "tags": [
+                    "Contact"
+                ],
+                "summary": "delete current acount",
+                "description": "delete current acount",
+                "operationId": "delete current acount",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/send_notify_addcontact/{id}": {
+            "post": {
+                "tags": [
+                    "Contact"
+                ],
+                "summary": "send notificatio to add contact",
+                "description": "send notificatio to add contact",
+                "operationId": "send notificatio to add contact",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "user id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/send_refused_addcontact/{id}": {
+            "post": {
+                "tags": [
+                    "Contact"
+                ],
+                "summary": "send notificatio to refused add contact",
+                "description": "send notificatio to refused add contact",
+                "operationId": "send notificatio to refused add contact",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "user id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/get_add_notification": {
+            "get": {
+                "tags": [
+                    "Contact"
+                ],
+                "summary": "get all notifications for auth user",
+                "description": "get all notifications for auth user",
+                "operationId": "get all notifications for auth user",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/send_request_amount/{id}": {
+            "post": {
+                "tags": [
+                    "request"
+                ],
+                "summary": "send notificatio to request money",
+                "description": "send notificatio to request money",
+                "operationId": "send notificatio to request money",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "contact id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/send_refused_amountrequest/{id}/{req_id}": {
+            "post": {
+                "tags": [
+                    "request"
+                ],
+                "summary": "send refused notificatio to request money",
+                "description": "send refused notificatio to request money",
+                "operationId": "send refused notificatio to request money",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "contact id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "req_id",
+                        "in": "path",
+                        "description": "request  id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/send_confirm_requestamount/{id}/{req_id}": {
+            "post": {
+                "tags": [
+                    "request"
+                ],
+                "summary": "send confirm notificatio to request money",
+                "description": "send confirm notificatio to request money",
+                "operationId": "send confirm notificatio to request money",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "contact id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "req_id",
+                        "in": "path",
+                        "description": "request  id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "apiAuth": {
+                "type": "http",
+                "description": "Login with email and password to get the authentication token",
+                "name": "Token based Based",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "LendMe App",
+            "description": "API Endpoints of Projects"
+        }
+    ]
+}
